@@ -5,7 +5,7 @@ enum class DaypartType {
 }
 
 
-data class Event<DaypartType> (
+data class Event (
     val title: String,
     val description: String?,
     val daypart: DaypartType,
