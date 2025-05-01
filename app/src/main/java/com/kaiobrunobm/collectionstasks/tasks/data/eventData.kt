@@ -1,6 +1,5 @@
 package com.kaiobrunobm.collectionstasks.tasks.data
 
-import com.kaiobrunobm.collectionstasks.tasks.data.Event
 
 enum class DaypartType {
     MORNING, AFTERNOON, EVENING
@@ -14,8 +13,7 @@ data class Event(
     val duration: Int,
 )
 
-
-val Events = mutableListOf<Event>(
+val events = mutableListOf<Event>(
     Event(
         title = "Study Kotlin",
         description = "Commit to studying Kotlin at least 15 minutes per day.",
@@ -40,3 +38,10 @@ val Events = mutableListOf<Event>(
         duration = 45
     )
 )
+
+val Event.durationOfEvent: String
+    get() = if (this.duration < 60) {
+        "short"
+    } else {
+        "long"
+    }
